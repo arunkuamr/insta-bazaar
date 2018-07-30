@@ -1,0 +1,129 @@
+<link href="css/login.css" rel="stylesheet">
+<ion-view id="signup">
+  <ion-content padding="true" id="signup-1" class="ib-signup ib-login">
+    <div class="app-icon">Instaa Bazaar</div>
+    <div class="row" ng-show="singUp.step == 1">
+      <div class="col">
+        <button ng-click="loginFb('facebook')" class="button button-positive button-block ib-login-bnt" id="signup-button4">Sign up with facebook</button>
+        <div class="in-sign-or spacer">
+          <span>Or</span>
+        </div>
+      </div>
+    </div>
+
+    <form name="signUpForm" class="list" id="login-form1">
+      <div class="row  responsive-sm">
+        {{singUp.step1}}
+        <div ng-show="singUp.step == 1" class="col" id="sin-step-1">
+          <div>
+            <label class="item-input item-floating-label ib-label">
+              <!-- <span class="input-label" style="color: #9F9F9F;">Email</span> -->
+              <input ng-model="singUp.regUser.email" type="email" placeholder="Email" required>
+            </label>
+          </div>
+          <div>
+            <label class="item-input item-floating-label ib-label">
+              <!-- <span class="input-label" style="color: #9F9F9F;">Password</span> -->
+              <input ng-model="singUp.regUser.password" type="password" placeholder="Password" required>
+            </label>
+          </div>
+
+          <div style="padding-top: 20px;" class="spacer"></div>
+          <button ng-click="singUpStep()" class="button button-positive button-block ib-login-bnt" id="signup-button4">SIGN UP WITH E-MAIL</button>
+          <div class="inb-sing-link">
+            <a id="login-button5" ui-sref="login">Already sign Up?
+              <span style="color:yellow">Login in</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div ng-show="singUp.step == 2" class="" id="sin-step-2">
+        <div class="row  responsive-sm">
+          <div class="col" id="sin-step-1">
+            <div>
+              <h1>Upload Image</h1>
+              <div>
+                <button class="button button-full button-assertive" ng-click="takePhoto()">
+                  Take Photo
+                </button>
+                <button class="button button-full button-assertive" ng-click="choosePhoto()">
+                  Choose Photo
+                </button>
+              </div>
+              <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
+  </ion-content>
+  </div>
+  <div>
+    <label class="item-input item-floating-label ib-label">
+      <input ng-model="singUp.regUser.businessName" type="text" placeholder="Business Name">
+    </label>
+  </div>
+  <div>
+    <label class="item-input item-floating-label ib-label">
+      <input ng-model="singUp.regUser.businessDesc" type="text" placeholder="Business Description">
+    </label>
+  </div>
+  <div class="ib-type">
+    <div class="type-lbl">Are You</div>
+    <div class="row">
+      <div class="col business-checkbox">
+        <ion-radio ng-model="singUp.regUser.businesstype" ng-value="'supply'"></ion-radio>
+        <label class="ib-radio-label">Supplier</label>
+        <ion-radio ng-model="singUp.regUser.businesstype" ng-value="'resell'"></ion-radio>
+        <label class="ib-radio-label">Reseller</label>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label class="item-input item-floating-label ib-label item-select">
+      <select ng-model="singUp.regUser.phoneCode" class="">
+        <option>+91</option>
+        <option>+86</option>
+        <option>+66</option>
+      </select>
+      <input ng-model="singUp.regUser.phoneNo" type="text" placeholder="Phone Number">
+    </label>
+  </div>
+  <div>
+    <label class="item-input item-floating-label ib-label">
+      <input ng-model="singUp.regUser.address" type="text" placeholder="Address">
+    </label>
+  </div>
+  <button ng-click="singUpStep()" class="button button-positive button-block" id="next">NEXT</button>
+  </div>
+  </div>
+  </div>
+  <!-- step-3 -->
+  <div ng-show="singUp.step == 3" class="" id="sin-step-3">
+    <div class="row  responsive-sm">
+      <div class="col" id="sin-step-3">
+        <div>
+          <select ng-model="singUp.regUser.city" class="">
+            <option>Salem</option>
+            <option>Trichy</option>
+            <option>Madurai</option>
+          </select>
+        </div>
+        <div>
+          <label class="item-input item-floating-label ib-label">
+            <input ng-model="singUp.regUser.pinCode" type="text" placeholder="Pin code">
+          </label>
+        </div>
+        <div class="ib-type">
+          <div class="type-lbl">Select Gender</div>
+          <div class="row">
+            <div class="col business-checkbox">
+              <ion-radio ng-model="singUp.regUser.gender" ng-value="'male'"></ion-radio>
+              <label class="ib-radio-label">Male</label>
+              <ion-radio ng-model="singUp.regUser.gender" ng-value="'female'"></ion-radio>
+              <label class="ib-radio-label">Female</label>
+            </div>
+          </div>
+        </div>
+        <button ng-click="singUpStep()" class="button button-positive button-block" id="Done">Done</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  </ion-content>
+</ion-view>

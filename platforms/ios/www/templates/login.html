@@ -1,0 +1,32 @@
+<link href="css/login.css" rel="stylesheet">
+<ion-view id="page5">
+  <ion-content padding="true" class="ib-login">
+    <div class="ib-common-content">
+    <form name="loginForm" class="list " id="login-form1">
+      <div class="app-icon">Instaa Bazaar</div>
+      <div class="row">
+        <div class="col">
+          <div>
+            <label class="item-input item-floating-label ib-label">
+              <!-- <span class="input-label" style="color: #9F9F9F;">Email</span> -->
+              <input ng-model="user.email" type="email" placeholder="Email" required>
+            </label>
+          </div>
+          <div>
+            <label class="item-input item-floating-label ib-label">
+              <!-- <span class="input-label" style="color: #9F9F9F;">Password</span> -->
+              <input ng-model="user.password" type="password" placeholder="Password" required>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 40px;" class="spacer"></div>
+      <!-- <button ng-click="loginEmail(loginForm,user)" class=" button button-assertive  button-block  icon-left ion-ios-email-outline "
+        id="signup-button3">LOGIN WITH EMAIL</button> -->
+      <button ng-click="loginEmail(loginForm, user)" class="button button-positive button-block ib-login-bnt" id="signup-button4">LOG IN</button>
+    </form>
+      <div class="inb-sing-link">If you are not a user?<a id="login-button5" ui-sref="signup"><span style="color:yellow">Sign up</span></a></div>
+    </div> 
+    </ion-content>
+</ion-view>
